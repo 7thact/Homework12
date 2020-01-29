@@ -1,0 +1,25 @@
+{
+  "name": "Homework12",
+  "version": "1.0.0",
+  "description": "Technologies Used:\r - node.js\r - inquirer\r - MySQL\r _________________",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7thact/Homework12.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/7thact/Homework12/issues"
+  },
+  "homepage": "https://github.com/7thact/Homework12#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^7.0.4",
+    "mysql": "^2.18.1"
+  }
+}
