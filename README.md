@@ -2,16 +2,17 @@
 
 Technologies Used:
 - node.js
-- inquirer
+- inquirer.js
 - MySQL
+- console.table.js
 _________________
 
 REO:
 > Inquirerjs NPM package and interaction via command-line
-> console.table NPM package
+<> console.table NPM package
 > separate file containing SQL queries -- constructor functions or class?
 > SQL JOINS
-> seed.sql file
+<> seed.sql file
 > what does a PRIMARY KEY value do?
     
 
