@@ -31,8 +31,6 @@ function runSearch() {
                 "View All Departments",
                 "View All Roles",
                 "View All Employees",
-                "Add a Department",
-                "Add a Role",
                 "Add an Employee",
                 "Update an Employee Role",
                 "Exit"
@@ -52,15 +50,6 @@ function runSearch() {
                 case "View All Employees":
                     viewEmployees();
                     break;
-
-                case "Add a Department":
-                    addDepartment();
-                    break;
-
-                case "Add a Role":
-                    addRole();
-                    break;
-
                 case "Add an Employee":
                     addEmployee();
                     break;
@@ -160,4 +149,70 @@ const viewDepartment = () => {
                         });
                 });
             });
-    }
+    };
+
+    const addEmployee = () => {
+        inquirer.prompt([
+            {
+                name: "first",
+                type: "input",
+                message: "Employee's first name?"
+            },
+            {
+                name: "last",
+                type: "input",
+                message: "Employee's last name?"
+            },
+            {
+                name: "choice",
+                type: "list",
+                message:"Employee's title?",
+                choices:[
+                    "President",
+                    "Vice President",
+                    "CFO",
+                    "Sales Associate",
+                    "Accounting Specialist",
+                    "Attorney",
+                    "Collections Specialist"
+                ]
+            }
+        ]).then(data => {
+            switch (data.choice) {
+                case "President":
+                    var roleId = 5;
+                    break;
+                case "Vice President":
+                    var roleId = 6;
+                    break;
+                case "CFO":
+                    var roleId = 7;
+                    break;
+                case "Sales Associate":
+                    var roleId = 2;
+                case "Accounting Specialist":
+                    var roleId = 1;
+                    break;
+                case "Attorney":
+                    var roleId = 4;
+                    break;
+                case "Collections Specialist":
+                    var roleId = 3;
+                    break;
+            }
+            const query = "INSERT INTO employee SET ?;"
+            connection.query(
+                query,
+                {
+                    first_name: data.first,
+                    last_name: data.last,
+                    role_id: roleId
+                },
+                (err) => {
+                    if (err) throw err;
+                    console.log("Thanks for adding a new employee.")
+                });
+        });
+    };
+
+    
